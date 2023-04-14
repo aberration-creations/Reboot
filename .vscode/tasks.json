@@ -1,0 +1,45 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build & run",
+            "type": "shell",
+            "command": "zig build run",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "zig build",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test all",
+            "type": "shell",
+            "command": "zig test test.zig",
+            "problemMatcher": []
+        },
+        {
+            "label": "live build & run",
+            "type": "shell",
+            "command": "nodemon --delay 100ms -e zig,frag,vert -x \"zig build run\"",
+            "problemMatcher": []
+        },
+        {
+            "label": "live test all",
+            "type": "shell",
+            "command": "nodemon --delay 100ms -e zig -x \"zig test test.zig\"",
+            "problemMatcher": []
+        }
+    ]
+}
